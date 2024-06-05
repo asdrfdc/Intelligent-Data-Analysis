@@ -16,7 +16,7 @@
 5. Spring AOP 切面编程
 6. Spring Scheduler 定时任务
 8. Redis：Redisson限流控制
-11. **RabbitMQ：消息队列**
+11. RabbitMQ：消息队列
 12. 智谱AI接口调用
 13. JUC线程池异步化
 14. JMX系统管理

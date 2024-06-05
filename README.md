@@ -54,14 +54,18 @@
 ## 项目架构图 🔥
 ### 同步处理
 系统空闲时，客户端输入分析诉求和原始数据，向业务后端发送请求。业务后端利用AI服务处理客户端数据，保持到数据库，并生成图表。处理后的数据由业务后端发送给AI服务，AI服务生成结果并返回给后端，最终将结果同步返回给客户端展示。
+![智能数据分析 drawio](https://github.com/asdrfdc/Intelligent-Data-Analysis/assets/163655764/a3b3f233-a432-4ad8-b383-cede8402999f)
 
 
 ### 异步化处理
 系统繁忙时，客户端提交任务，系统选择异步化处理，先保存基本数据到数据库返回id，用户可以去做别的事不用闲等，后台异步调用AI进行数据生成
 #### JUC异步线程
 利用线程池实现异步处理
+![智能数据分析JUC drawio](https://github.com/asdrfdc/Intelligent-Data-Analysis/assets/163655764/d1983605-25f0-40cd-965e-551f2e5f548c)
 #### RabbitMQ
-利用消息队列实现异步处理，分为工作消息队列——执行任务，和延迟队列——实现超时中断
+利用消息队列和JUC实现多级异步处理，分为工作消息队列——执行任务，和延迟队列——实现超时中断
+![智能数据分析JUC+RabbitMQ drawio](https://github.com/asdrfdc/Intelligent-Data-Analysis/assets/163655764/6d65f728-e45f-4d58-b978-8eb2859975ef)
+
 
 
 
